@@ -291,8 +291,8 @@ The full paper is [`paper/main.pdf`](paper/main.pdf). If you use this code or da
 Department of Computer Engineering, Istanbul Health and Technology University, Istanbul, Turkey
 
 - **Muhammed Enes Akça** ([@akca0](https://github.com/akca0))
-- **İdris Salih Yıldırım**
-- **Yağmur Öztürk**
+- **İdris Salih Yıldırım** ([@Rakcery](https://github.com/Rakcery))
+- **Yağmur Öztürk** ([@yamurbby](https://github.com/yamurbby))
 
 CSE303 Algorithm Analysis course project.
 
