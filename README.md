@@ -17,7 +17,8 @@ classifiers on CIFAR-10 under one shared recipe and measure, for every run, **pe
 ## Figures
 
 <p align="center">
-  <a href="figures/fig1_accuracy_vs_energy.png"><img src="figures/fig1_accuracy_vs_energy.png" alt="Accuracy vs. energy: accuracy vs. training energy with the Pareto front" width="520"></a><br>
+  <a href="figures/fig1_accuracy_vs_energy.png"><!-- image pinned to the commit of the latest version of this figure (avoids stale CDN caches); update the hash if the figure changes -->
+  <img src="https://raw.githubusercontent.com/akca0/cifar10-beyond-flops/b8b87d1/figures/fig1_accuracy_vs_energy.png" alt="Accuracy vs. energy: accuracy vs. training energy with the Pareto front" width="520"></a><br>
   <sub><b>Accuracy vs. energy.</b> MediumCNN forms most of the Pareto front; only full-data ResNet-18 extends it (paper Fig. 3).</sub>
 </p>
 
