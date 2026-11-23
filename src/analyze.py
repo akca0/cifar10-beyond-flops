@@ -177,10 +177,12 @@ def fig_acc_vs_energy(s):
                     color=COLOR[m], marker=MARKER[m], ms=6, capsize=2, lw=1.5, label=m,
                     mec="white", mew=1)
         last = x.iloc[-1]
-        dx, dy = {"ResNet18": (0, 11), "MediumCNN": (0, 11)}.get(m, (7, 0))
+        # label offsets (points) and alignment; chosen so that no label touches another label,
+        # a curve or the title (ResNet18 and MediumCNN to the upper left, SmallCNN above its point)
+        dx, dy, ha = {"ResNet18": (-8, 0, "right"), "MediumCNN": (-4, 8, "right"),
+                      "SmallCNN": (0, 8, "center")}.get(m, (7, 0, "left"))
         ax.annotate(m, (last.train_gpu_energy_J_mean / 1e3, last.accuracy_pct_mean), xytext=(dx, dy),
-                    textcoords="offset points", va="center", ha="center" if dy else "left",
-                    fontsize=8, color=INK)
+                    textcoords="offset points", va="center", ha=ha, fontsize=8, color=INK)
     # Pareto front: points that reach higher accuracy with less energy than all others
     pts = s[["train_gpu_energy_J_mean", "accuracy_pct_mean"]].to_numpy()
     pts = pts[np.argsort(pts[:, 0])]
