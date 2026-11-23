@@ -279,14 +279,23 @@ The full paper is [`paper/main.pdf`](paper/main.pdf). If you use this code or da
 @misc{beyondflops2026,
   title  = {Beyond {FLOPs}: An Experimental Time--Space--Energy--Performance Analysis
             of Deep Image Classifiers on {CIFAR-10}},
-  author = {{The cifar10-beyond-flops authors}},
+  author = {Ak{\c{c}}a, Muhammed Enes and Y{\i}ld{\i}r{\i}m, {\.I}dris Salih and {\"O}zt{\"u}rk, Ya{\u{g}}mur},
   year   = {2026},
-  note   = {CSE303 Algorithm Analysis course project},
+  note   = {CSE303 Algorithm Analysis course project, Istanbul Health and Technology University},
   url    = {https://github.com/akca0/cifar10-beyond-flops}
 }
 ```
 
-**Authors.** CSE303 Algorithm Analysis project group (3 members): [@akca0](https://github.com/akca0)
-and two further group members (names will be added).
+## Authors
 
-**License.** The code is released under the [MIT License](LICENSE).
+Department of Computer Engineering, Istanbul Health and Technology University, Istanbul, Turkey
+
+- **Muhammed Enes Akça** ([@akca0](https://github.com/akca0))
+- **İdris Salih Yıldırım**
+- **Yağmur Öztürk**
+
+CSE303 Algorithm Analysis course project.
+
+## License
+
+The code is released under the [MIT License](LICENSE).
