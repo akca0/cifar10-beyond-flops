@@ -16,21 +16,24 @@ classifiers on CIFAR-10 under one shared recipe and measure, for every run, **pe
 
 ## Figures
 
-<p align="center">
-  <img src="figures/fig2_scaling.png" alt="Training time, energy, peak VRAM and accuracy vs. training-set size" width="760"><br>
-  <em>Scaling with data size: time and energy grow linearly, GPU memory stays constant, accuracy shows diminishing returns (paper Fig. 1).</em>
-</p>
+### Scaling analysis
 
-<table>
-  <tr>
-    <td width="55%"><img src="figures/fig3_theory_vs_measured.png" alt="FLOPs vs. measured inference time, and achieved training TFLOP/s"></td>
-    <td width="45%"><img src="figures/fig1_accuracy_vs_energy.png" alt="Accuracy vs. training energy with Pareto front"></td>
-  </tr>
-  <tr>
-    <td><em>Theory vs. measurement: time is not proportional to FLOPs, because achieved throughput differs 27× between models (paper Fig. 2).</em></td>
-    <td><em>Accuracy–energy trade-off: MediumCNN forms most of the Pareto front (paper Fig. 3).</em></td>
-  </tr>
-</table>
+![Scaling analysis: training time, energy, peak VRAM and accuracy vs. training-set size](figures/fig2_scaling.png)
+
+*Time and energy grow linearly with the training-set size n, GPU memory stays constant, and accuracy
+shows diminishing returns (paper Fig. 1).*
+
+### Theoretical vs. measured cost
+
+![Theoretical vs. measured: FLOPs vs. inference time, and achieved training TFLOP/s](figures/fig3_theory_vs_measured.png)
+
+*Time is not proportional to FLOPs: the achieved throughput differs 27× between models (paper Fig. 2).*
+
+### Accuracy vs. energy
+
+![Accuracy vs. training energy with the Pareto front](figures/fig1_accuracy_vs_energy.png)
+
+*MediumCNN forms most of the accuracy–energy Pareto front; only full-data ResNet-18 extends it (paper Fig. 3).*
 
 ## Key findings
 
@@ -144,8 +147,8 @@ With little data the large models lose to MediumCNN and are less stable across s
 **Energy-measurement methods.** Integrating 10 Hz power samples underestimates the counter by
 6–17% (most for the shortest runs). CodeCarbon's GPU figure equals the counter (ratio 1.00) because
 it reads the same NVML source, so it is not an independent check. CodeCarbon's total (GPU + CPU + RAM)
-is 1.6–2.6× the GPU energy. All 100 runs used 908 kJ (0.25 kWh) of GPU training energy, about
-213 g CO₂ according to CodeCarbon.
+is 1.6–2.6× the GPU energy. All 100 runs used 908 kJ (0.25 kWh) of GPU training energy; training and inference together
+emitted about 213 g CO₂ according to CodeCarbon.
 
 All raw numbers are in [`results/experiments.csv`](results/experiments.csv) (one row per run, 75 columns).
 
@@ -231,14 +234,14 @@ After re-running `analyze.py`, copy `figures/fig1_*.png`, `fig2_*.png` and `fig3
 
 ## Hardware & software
 
-| | |
+| Component | Specification |
 |---|---|
 | Machine | HP Victus 16 laptop, vendor "Performance" mode, fan at maximum, cooling pad |
 | GPU | NVIDIA GeForce RTX 4060 Laptop, 8 GB, power limit 113 W, driver 621.24 |
 | CPU / RAM | AMD Ryzen 7 7840HS (8C/16T), 32 GB |
 | OS | Windows 11 |
 | Software | Python 3.12.10, PyTorch 2.11.0 + CUDA 12.8, scikit-learn 1.9.1, CodeCarbon 3.3.2 |
-| Main run | 100/100 runs without error in 3 h 38 min; GPU clock 2505 MHz, max 73 °C |
+| Main run | 100/100 runs without error in 3 h 38 min; ResNet-18 runs at 2505–2512 MHz, max GPU temperature 73 °C |
 
 ## Limitations & future work
 
