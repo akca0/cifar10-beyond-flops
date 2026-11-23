@@ -44,8 +44,9 @@ classifiers on CIFAR-10 under one shared recipe and measure, for every run, **pe
 - **Across models, FLOPs mislead.** MobileNetV2 needs 6.3× fewer FLOPs than ResNet-18 but trains
   1.4× slower, uses 1.47× more energy and 2.6× more training VRAM. It sustains only 1.3 TFLOP/s vs.
   11.5 TFLOP/s for ResNet-18 (depthwise convolutions are memory-bound).
-- **Training memory is driven by activations, not parameters.** Parameters vs. peak training VRAM
-  has a rank correlation of only ρ = 0.6.
+- **Parameter count is a weak cost proxy.** Across the five models its rank correlation is only
+  ρ = 0.6 with training time, energy and peak training VRAM and 0.7 with accuracy (FLOPs: 0.9 and 1.0).
+  Training memory is driven by activations, not parameters.
 - **Diminishing returns.** MediumCNN reaches 89.4% with 7.8× less energy than ResNet-18 (92.9%) and
   forms most of the accuracy–energy Pareto front.
 
@@ -150,6 +151,11 @@ With little data the large models lose to MediumCNN and are less stable across s
 it reads the same NVML source, so it is not an independent check. CodeCarbon's total (GPU + CPU + RAM)
 is 1.6–2.6× the GPU energy. All 100 runs used 908 kJ (0.25 kWh) of GPU training energy; training and inference together
 emitted about 213 g CO₂ according to CodeCarbon.
+
+**Peak host RAM.** About 3.5 GB (median over the 100 runs) for every model and data size, in both
+training and inference: it is dominated by the framework and the in-memory dataset, which is loaded
+once regardless of the subset, so it does not grow with n. Only the first runs of the session, before
+all libraries were loaded, needed 2.7–3.1 GB. Model-dependent memory shows up in the GPU (VRAM) columns above.
 
 All raw numbers are in [`results/experiments.csv`](results/experiments.csv) (one row per run, 75 columns).
 
