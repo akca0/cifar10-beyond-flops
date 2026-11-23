@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrrrrrrrr}
+\hline
+Model & Params (M) & MFLOPs/img & Accuracy (%) & Train time (s) & Train GPU energy (kJ) & Peak train VRAM (MB) & Peak infer VRAM (MB) & Throughput (img/s) & Infer energy (mJ/img) & Latency bs=1 (ms) \\
+\hline
+MLP & 1.71 & 3.41 & 57.18 $\pm$ 0.32 & 35.4 $\pm$ 0.8 & 1.22 $\pm$ 0.04 & 57.63 & 42.80 & 515,762 & 0.08 $\pm$ 0.00 & 0.42 \\
+SmallCNN & 0.02 & 11.21 & 69.03 $\pm$ 0.33 & 35.8 $\pm$ 1.0 & 2.16 $\pm$ 0.04 & 63.20 & 95.41 & 203,230 & 0.39 $\pm$ 0.01 & 0.51 \\
+MediumCNN & 0.29 & 77.27 & 89.43 $\pm$ 0.08 & 62.7 $\pm$ 3.0 & 4.66 $\pm$ 0.12 & 104 & 154 & 90,687 & 0.96 $\pm$ 0.01 & 1.15 \\
+MobileNetV2 & 2.24 & 176 & 91.76 $\pm$ 0.15 & 606.2 $\pm$ 1.6 & 53.75 $\pm$ 0.09 & 1,227 & 354 & 8,276 & 10.38 $\pm$ 0.06 & 6.62 \\
+ResNet18 & 11.17 & 1,111 & 92.87 $\pm$ 0.35 & 434.4 $\pm$ 1.9 & 36.56 $\pm$ 0.12 & 476 & 495 & 10,532 & 8.04 $\pm$ 0.07 & 3.30 \\
+\hline
+\end{tabular}

@@ -1,0 +1,25 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.DS_Store
+Thumbs.db
+emissions*.csv
+.codecarbon*
+paper/*.log
+paper/*.blg
+paper/*.aux
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+
+# Private (not published): personal Turkish guide and Turkish reading copy of the paper
+docs/
+paper/main_tr.*
+
+# Course handout (instructor document, not ours to publish)
+CSE303_BYM303_MEK351_*.pdf

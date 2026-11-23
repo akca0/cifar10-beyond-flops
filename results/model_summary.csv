@@ -1,0 +1,6 @@
+model,params,params (M),FLOPs/image (M),"size (MB, float32)",FLOPs / param
+MLP,1708810,1.709,3.4,6.52,2.0
+SmallCNN,20138,0.02,11.2,0.08,556.6
+MediumCNN,288746,0.289,77.3,1.1,267.6
+MobileNetV2,2236682,2.237,176.0,8.53,78.7
+ResNet18,11173962,11.174,1110.8,42.63,99.4

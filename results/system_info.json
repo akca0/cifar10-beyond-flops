@@ -1,0 +1,18 @@
+{
+  "os": "Windows 11 (10.0.26200)",
+  "cpu": "AMD Ryzen 7 7840HS w/ Radeon 780M Graphics",
+  "cpu_cores_physical": 8,
+  "cpu_threads": 16,
+  "ram_GB": 31.3,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_vram_GB": 8.0,
+  "gpu_power_limit_W": 113.371,
+  "nvidia_driver": "621.24",
+  "python": "3.12.10",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "cudnn": 91900,
+  "numpy": "2.5.4",
+  "scikit_learn": "1.9.1",
+  "codecarbon": "3.3.2"
+}
