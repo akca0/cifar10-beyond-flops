@@ -16,24 +16,25 @@ classifiers on CIFAR-10 under one shared recipe and measure, for every run, **pe
 
 ## Figures
 
-### Scaling analysis
+<p align="center">
+  <a href="figures/fig1_accuracy_vs_energy.png"><img src="figures/fig1_accuracy_vs_energy.png" alt="Accuracy vs. energy: accuracy vs. training energy with the Pareto front" width="520"></a><br>
+  <sub><b>Accuracy vs. energy.</b> MediumCNN forms most of the Pareto front; only full-data ResNet-18 extends it (paper Fig. 3).</sub>
+</p>
 
-![Scaling analysis: training time, energy, peak VRAM and accuracy vs. training-set size](figures/fig2_scaling.png)
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="figures/fig2_scaling.png"><img src="figures/fig2_scaling.png" alt="Scaling analysis: training time, energy, peak VRAM and accuracy vs. training-set size" width="100%"></a><br>
+      <sub><b>Scaling analysis.</b> Time and energy grow linearly with n, GPU memory stays constant, accuracy shows diminishing returns (Fig. 1).</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="figures/fig3_theory_vs_measured.png"><img src="figures/fig3_theory_vs_measured.png" alt="Theoretical vs. measured: FLOPs vs. inference time, and achieved training TFLOP/s" width="100%"></a><br>
+      <sub><b>Theoretical vs. measured.</b> Time is not proportional to FLOPs: achieved throughput differs 27× between models (Fig. 2).</sub>
+    </td>
+  </tr>
+</table>
 
-*Time and energy grow linearly with the training-set size n, GPU memory stays constant, and accuracy
-shows diminishing returns (paper Fig. 1).*
-
-### Theoretical vs. measured cost
-
-![Theoretical vs. measured: FLOPs vs. inference time, and achieved training TFLOP/s](figures/fig3_theory_vs_measured.png)
-
-*Time is not proportional to FLOPs: the achieved throughput differs 27× between models (paper Fig. 2).*
-
-### Accuracy vs. energy
-
-![Accuracy vs. training energy with the Pareto front](figures/fig1_accuracy_vs_energy.png)
-
-*MediumCNN forms most of the accuracy–energy Pareto front; only full-data ResNet-18 extends it (paper Fig. 3).*
+<p align="center"><sub>Click a figure to open it at full size.</sub></p>
 
 ## Key findings
 
