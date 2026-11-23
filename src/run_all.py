@@ -121,10 +121,12 @@ def main():
         recipe = dataclasses.replace(RECIPE, epochs=1)
         plan = build_plan(("MLP", "SmallCNN"), (0.10, 0.25), (0,))
         out_csv, log_file = RESULTS / "trial_experiments.csv", RESULTS / "trial_log.txt"
+        info_file = RESULTS / "trial_system_info.json"  # never overwrite the main run's system info
     else:
         recipe = RECIPE
         plan = build_plan(tuple(MODELS), FRACTIONS, SEEDS)
         out_csv, log_file = RESULTS / "experiments.csv", RESULTS / "run_log.txt"
+        info_file = RESULTS / "system_info.json"
 
     def log(msg: str):
         line = f"[{datetime.now():%H:%M:%S}] {msg}"
@@ -137,7 +139,7 @@ def main():
     log(f"Started. Recipe: {recipe}")
 
     info = system_info()
-    (RESULTS / "system_info.json").write_text(json.dumps(info, indent=2, ensure_ascii=False), encoding="utf-8")
+    info_file.write_text(json.dumps(info, indent=2, ensure_ascii=False), encoding="utf-8")
     log(f"System: {info['gpu']} | {info['cpu']} | {info['os']}")
 
     if not args.skip_power_check:

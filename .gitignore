@@ -23,3 +23,6 @@ paper/main_tr.*
 
 # Course handout (instructor document, not ours to publish)
 CSE303_BYM303_MEK351_*.pdf
+
+# Outputs of the trial run (python src/run_all.py --trial)
+results/trial_*
